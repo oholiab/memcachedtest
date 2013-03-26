@@ -40,6 +40,6 @@ options.
 
 Best run against: 
 
-		memcached -vv -o slab_reassign,slab_automove -p 11211,
+		memcached -vv -o slab_reassign,slab_automove -p 11211
 
 Obviously you can muck about with this as you muck about with the code
