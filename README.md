@@ -38,5 +38,8 @@ building.
 Memcached 1.4.11 and up, part of the standard build so no special compile
 options.
 
-Best run against memcached -vv -o slab_reassign,slab_automove -p 11211,
-obviously you can muck about with this as you muck about with the code
+Best run against: 
+
+		memcached -vv -o slab_reassign,slab_automove -p 11211,
+
+Obviously you can muck about with this as you muck about with the code
