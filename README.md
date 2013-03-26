@@ -9,6 +9,15 @@ whether the reallocation worked as I expected.
 
 I only had the vaguest idea what I was doing here and just needed a POC.
 
+Please note that this will *NOT* show up when using the default, conservative
+slab reassign algorithm. To get it to move some stuff about, telnet on and
+issue:
+
+		slabs automove 2
+
+and it will convert to the aggressive automove algorithm that performs a move on
+(all, some?) evictions.
+
 Why does it eat all the pies?
 -----------------------------
 I've not rate limited it in any way, it runs in 8 threads, stores ridiculously
@@ -25,3 +34,9 @@ Dependencies
 ------------
 Dalli for interacting with memcached with minimal fuss and native extension
 building.
+
+Memcached 1.4.11 and up, part of the standard build so no special compile
+options.
+
+Best run against memcached -vv -o slab_reassign,slab_automove -p 11211,
+obviously you can muck about with this as you muck about with the code
